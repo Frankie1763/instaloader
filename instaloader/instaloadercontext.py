@@ -444,6 +444,12 @@ class InstaloaderContext:
                 else:
                     raise ConnectionException(error_string) from err
             self.error(error_string + " [retrying; skip with ^C]", repeat_at_end=False)
+            ###########################################################################################
+            '''Revised the original instaloader module to directly re-raise TooManyRequestsException 
+            instead of waiting and trying again.'''
+            if isinstance(err, TooManyRequestsException):
+                raise TooManyRequestsException(error_string) from err
+            ###########################################################################################
             try:
                 if is_graphql_query and isinstance(err, TooManyRequestsException):
                     self._ratecontrol_graphql_query(params['query_hash'], untracked_queries=True)
