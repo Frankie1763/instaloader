@@ -64,3 +64,6 @@ class QueryReturnedNotFoundException(ConnectionException):
 
 class TooManyRequestsException(ConnectionException):
     pass
+
+class ProxyInvalidException(ConnectionException):
+    pass
