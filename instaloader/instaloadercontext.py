@@ -62,7 +62,7 @@ class InstaloaderContext:
         self.quiet = quiet
         self.max_connection_attempts = max_connection_attempts
         self._graphql_page_length = 50
-        self._root_rhx_gis = None
+        self._root_rhx_gis = ''
         self.two_factor_auth_pending = None
 
         # error log, filled with error() and printed at the end of Instaloader.main()

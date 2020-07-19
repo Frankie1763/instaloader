@@ -69,7 +69,7 @@ class Post:
         self._node = node
         self._owner_profile = owner_profile
         self._full_metadata_dict = None  # type: Optional[Dict[str, Any]]
-        self._rhx_gis_str = None         # type: Optional[str]
+        self._rhx_gis_str = ''           # type: Optional[str]
         self._location = None            # type: Optional[PostLocation]
         self._iphone_struct_ = None
         if 'iphone_struct' in node:
@@ -537,7 +537,7 @@ class Profile:
         self._has_public_story = None  # type: Optional[bool]
         self._node = node
         self._has_full_metadata = False
-        self._rhx_gis = None
+        self._rhx_gis = ""
         self._iphone_struct_ = None
         if 'iphone_struct' in node:
             # if loaded from JSON with load_structure_from_file()
